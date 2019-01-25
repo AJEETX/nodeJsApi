@@ -1,6 +1,9 @@
 {
     "swagger":"2.0",
-    "host": "localhost:9000",
+    "host": "api-readify.herokuapp.com",
+    "schemes": [
+        "https"
+    ],
     "basePath":"/",
     "consumes": [],
     "produces": [
