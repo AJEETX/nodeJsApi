@@ -1,13 +1,13 @@
-module.exports=(num)=>{
+module.exports=(number)=>{
 
-    var a = 1, b = 0, temp;
+    var first = 0,second = 1,  temp;
 
-  while (num > 0){
-    temp = a;
-    a = a + b;
-    b = temp;
-    num--;
+  while (number > 0){
+    temp = second;
+    second = second + first;
+    first = temp;
+    number--;
   }
 
-  return b;
+  return first;
 }

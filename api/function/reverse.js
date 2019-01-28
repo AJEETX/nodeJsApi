@@ -1,4 +1,4 @@
-module.exports=(str)=>{
+module.exports=(sentence)=>{
     
-    return str.split("").reverse().join("").split(" ").reverse().join(" ")
+    return sentence.split("").reverse().join("").split(" ").reverse().join(" ")
 }
