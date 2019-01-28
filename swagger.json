@@ -1,5 +1,6 @@
 {
     "swagger":"2.0",
+    "schemes":["http","https"],
     "host": "localhost:9000",
     "basePath":"/",
     "consumes": [],
