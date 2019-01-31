@@ -1,13 +1,10 @@
 module.exports=(number)=>{
 
-    var first = 0,second = 1,  temp;
+  const Phi=(1+Math.sqrt(5))/2
 
-  while (number > 0){
-    temp = second;
-    second = second + first;
-    first = temp;
-    number--;
-  }
+  const phi=(1-Math.sqrt(5))/2
 
-  return first;
+  let fibonacciNumber=[Math.pow(Phi,number)-Math.pow(phi,number)]/Math.sqrt(5)
+
+  return Math.round(fibonacciNumber);
 }

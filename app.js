@@ -1,13 +1,16 @@
 const express=require('express')
 const app=express(),
 swaggerUi=require('swagger-ui-express'),
-doc=require('./swagger.json');
+doc=require('./swagger.json'),
+morgan=require('morgan');
+
+app.use(morgan('combined'))
 app.use('/swagger',swaggerUi.serve,swaggerUi.setup(doc))
 
-const fibonacci=require('./api/routes/fibonacci')
-const reverse=require('./api/routes/reverse')
-const token=require('./api/routes/token')
-const triangletype=require('./api/routes/triangleType')
+const fibonacci=require('./api/controller/fibonacci')
+const reverse=require('./api/controller/reverse')
+const token=require('./api/controller/token')
+const triangletype=require('./api/controller/triangleType')
 
 app.use('/api/Fibonacci',fibonacci)
 app.use('/api/Reverse',reverse)
