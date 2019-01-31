@@ -1,8 +1,8 @@
 const express=require('express');
 const router=express.Router();
-const triangle=require('../function/triangleType')
+const triangle=require('../service/triangleType')
 
-router.get('/',(req,res,next)=>{
+router.get('/',(req,res)=>{
 
     const a=req.query.a;
 
@@ -11,7 +11,7 @@ router.get('/',(req,res,next)=>{
     const c=req.query.c;
 
     const answer=triangle(parseInt(a),parseInt(b),parseInt(c));
-    
+
     res.send(200,answer)
 })
 
