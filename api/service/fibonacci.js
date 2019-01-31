@@ -1,6 +1,6 @@
 module.exports=(number)=>{
 
-  if(isNaN(mumber))
+  if(isNaN(parseInt(number)))
 
   return 'Not a number'
 

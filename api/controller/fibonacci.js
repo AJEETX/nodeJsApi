@@ -3,14 +3,14 @@ const router=express.Router();
 const fb=require('../service/fibonacci')
 
 router.get('/',(req,res,next)=>{
+    
+    let answer
+    
+    let number=req.query.n;
 
-    const num=req.query.n;
+    answer=fb(number);
 
-    const number=parseInt(num)
-
-    const answer=fb(number);
-
-    res.send(200,answer)
+    res.status(200).send(answer.toString())
 })
 
 module.exports=router
