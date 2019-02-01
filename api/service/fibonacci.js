@@ -10,5 +10,5 @@ module.exports=(number)=>{
 
   let fibonacciNumber=[Math.pow(Phi,number)-Math.pow(phi,number)]/Math.sqrt(5)
 
-  return Math.round(fibonacciNumber);
+  return Math.round(fibonacciNumber).toString();
 }
