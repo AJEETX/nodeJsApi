@@ -1,5 +1,6 @@
 const express=require('express');
 const router=express.Router();
+
 const fibonacci=require('../service/fibonacci')
 const reverse=require('../service/reverse')
 const token=require('../service/token')
@@ -17,7 +18,6 @@ router.get('/',(req,res)=>{
         '/api/Token':{func:token,query:''},
         '/api/TriangleType':{func:triangle,query:[param.a,param.b,param.c]}
     };
-
 
     let service=services[req.baseUrl]
     

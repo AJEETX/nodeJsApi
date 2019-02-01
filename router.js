@@ -1,13 +1,14 @@
-const express=require('express')
+const express=require('express');
+
 const app=express(),
-swaggerUi=require('swagger-ui-express'),
-doc=require('./swagger.json'),
-morgan=require('morgan');
+    swaggerUi=require('swagger-ui-express'),
+        doc=require('./swagger.json'),
+            morgan=require('morgan');
 
 app.use(morgan('combined'))
 app.use('/swagger',swaggerUi.serve,swaggerUi.setup(doc))
 
-const main=require('./api/controller/router')
+const main=require('./api/controller/main')
 
 app.use('/api/Fibonacci',main)
 app.use('/api/Reverse',main)
