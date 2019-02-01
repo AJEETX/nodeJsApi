@@ -1,19 +1,20 @@
-module.exports=(a,b,c)=>{
+module.exports=(sides)=>{
 
-    let side1=parseInt(a),side2=parseInt(b),side3=parseInt(c);
-    if(side1+side2<=side3 || side2+side3<=side1 || side1+side3<=side2){
+    let side1=parseInt(sides[0]),side2=parseInt(sides[1]),side3=parseInt(sides[2]);
+
+    if(side1 + side2 <= side3 || side2 + side3 <= side1 || side1 + side3 <= side2){
         return "Error";
     }
 
-    if(a==b && b==c){
+    if(side1 == side2 && side2==side3){
         return 'Equilateral';
     }
 
-    if(a==b || b==c || a==c){
+    if(side1==side2 || side2==side3 || side1==side3){
         return 'Isosceles';
     }
 
-    if(a!=b && b!=c){
+    if(side1!= side2 && side2 != side3){
         return "Scalene";
     }
 }

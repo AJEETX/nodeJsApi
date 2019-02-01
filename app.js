@@ -7,7 +7,7 @@ morgan=require('morgan');
 app.use(morgan('combined'))
 app.use('/swagger',swaggerUi.serve,swaggerUi.setup(doc))
 
-const main=require('./api/controller/main')
+const main=require('./api/controller/router')
 
 app.use('/api/Fibonacci',main)
 app.use('/api/Reverse',main)
