@@ -1,4 +1,4 @@
-module.exports=(number)=>{
+const fibonacci=(number)=>{
 
   if(isNaN(parseInt(number)))
 
@@ -12,3 +12,4 @@ module.exports=(number)=>{
 
   return Math.round(fibonacciNumber).toString();
 }
+module.exports=fibonacci;

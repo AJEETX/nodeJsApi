@@ -1,4 +1,4 @@
-module.exports=(sides)=>{
+const triangleType=(sides)=>{
 
     let side1=parseInt(sides[0]),side2=parseInt(sides[1]),side3=parseInt(sides[2]);
 
@@ -22,3 +22,4 @@ module.exports=(sides)=>{
         return "Scalene";
     }
 }
+module.exports=triangleType;

@@ -1,9 +1,14 @@
-const http=require('http'),
-router=require('./router')
+const http=require('http'), app=require('./app').app
 
 const port=process.env.PORT || 9000;
 
-const server=http.createServer(router);
+const serverService=(http,app,port)=>{
 
-server.listen(port,()=>
-    console.log(`server running port ${port}`))
+    const server=http.createServer(app);
+
+    server.listen(port,()=> console.log(`server running port ${port}`))
+}
+
+serverService(http,app,port);
+
+module.exports=serverService;
