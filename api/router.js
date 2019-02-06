@@ -1,6 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const Fibonacci='Fibonacci',Reverse='Reverse',Token='Token',TriangleType='TriangleType';
+
 const _apiServices={
     Fibonacci:require('./service/'+Fibonacci),
     Reverse:require('./service/'+Reverse),
@@ -12,20 +13,28 @@ const routerService=(router,apiServices)=>{
 
     router.get('/',(req,res)=>{
         
-        let param=req.query;
-        
-        let answer
-        
         let services={
-            '/api/Fibonacci':{ func:apiServices[Fibonacci],query: param.n},
-            '/api/Reverse':{func:apiServices[Reverse],query:param.sentence},
-            '/api/Token':{func:apiServices[Token],query:''},
-            '/api/TriangleType':{func:apiServices[TriangleType],query:[param.a,param.b,param.c]}
+            '/api/Fibonacci':{ 
+                method:apiServices[Fibonacci],
+                query: req.query.n
+            },
+            '/api/Reverse':{
+                method:apiServices[Reverse],
+                query:req.query.sentence
+            },
+            '/api/Token':{
+                method:apiServices[Token],
+                query:''
+            },
+            '/api/TriangleType':{
+                method:apiServices[TriangleType],
+                query:[req.query.a,req.query.b,req.query.c]
+            }
         };
     
         let service=services[req.baseUrl]
         
-        answer=service.func(service.query)
+        let answer=service.method(service.query)
     
         res.status(200).send(answer)
     })

@@ -1,9 +1,11 @@
 const express=require('express');
 const app=express(),swaggerUi=require('swagger-ui-express'),doc=require('./swagger.json'),_morgan=require('morgan');
-const _router=require('./api/router')
+const _router=require('./router')
 
 const expressService=(app,morgan,router)=>{
+
     app.use(morgan('combined'))
+    
     app.use('/swagger',swaggerUi.serve,swaggerUi.setup(doc))
     
     app.use('/api/Fibonacci',router)

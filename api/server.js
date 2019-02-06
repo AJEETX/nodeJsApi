@@ -6,7 +6,11 @@ const serverService=(http,app,port)=>{
 
     const server=http.createServer(app);
 
-    server.listen(port,()=> console.log(`server running port ${port}`))
+    const serverMessage=`server running port ${port}`;
+
+    server.listen(port,()=> console.log(serverMessage))
+    
+    return serverMessage;
 }
 
 serverService(http,app,port);
