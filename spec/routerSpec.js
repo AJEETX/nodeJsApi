@@ -1,5 +1,5 @@
 const request=require('request')
-const routerFunc=require('../api/routes/router')
+const routes=require('../api/routes/router')
 
 const express=require('express');
 const router=express.Router();
@@ -16,26 +16,13 @@ describe('Router ',()=>{
 
             //given
             let url=baseUrl+apiUrl+query;
-            const Fibonacci='Fibonacci',Reverse='Reverse',Token='Token',TriangleType='TriangleType';
-            const _apiServices={
-                Fibonacci:require('../api/service/'+Fibonacci),
-                Reverse:require('../api/service/'+Reverse),
-                Token:require('../api/service/'+Token),
-                TriangleType:require('../api/service/'+TriangleType)
-            };
-            
 
             //when
-            setTimeout(function(){
-                routerFunc.routerService(router,_apiServices),1000
-            });
-            
-            // request.get(url,(err,response,body)=>{
-
-            //     //then
-            //     expect(response.statusCode).toBe(200);
-            //     done();
-            // })
+            request.get(url,(req,res)=>{
+                //then
+                expect(res).not.toBe(null)
+                done();
+            })
         })
     })
 })

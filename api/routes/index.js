@@ -1,8 +1,5 @@
-const express=require('express');
-const server=express(),swaggerUi=require('swagger-ui-express'),doc=require('../swagger.json'),_morgan=require('morgan');
-const _router=require('./router')
-
-const expressService=(server,morgan,router)=>{
+const _route=require('./router')
+const expressService=(server,morgan,router,swaggerUi,doc)=>{
 
     server.use(morgan('combined'))
     
@@ -23,9 +20,5 @@ const expressService=(server,morgan,router)=>{
         res.send(err.message)
     })
 }
-expressService(server,_morgan,_router);
 
-module.exports={
-    server:server,
-    expressService:expressService
-};
+module.exports=expressService;
