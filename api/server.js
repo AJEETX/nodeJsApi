@@ -4,7 +4,7 @@ swaggerUi=require('swagger-ui-express'),
 doc=require('./swagger.json'),
 morgan=require('morgan'),
 router=require('./routes/router'),
-port=process.env.PORT || 9000;
+port=process.env.PORT || 8000;
 
 const server=(express,index,port,morgan,router,swaggerUi,doc)=>{
 
